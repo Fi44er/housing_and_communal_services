@@ -14,7 +14,10 @@ router.post('/login', UserController.login)
 router.post('/logout', UserController.logout)
 router.get('/refresh', UserController.refresh)
 router.get('/users', middlewaresAuth, UserController.getUsers)
-// router.get('/getUserById', UserController.getUserById)
+
+// municipal
+router.post('/regMunicipalServices', UserController.regMunicipalServices)
+router.post('/loginMunicipalServices', UserController.loginMunicipalServices)
 
 
 module.exports = router

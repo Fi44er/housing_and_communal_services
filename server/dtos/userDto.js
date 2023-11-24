@@ -2,12 +2,14 @@ module.exports = class UserDto {
     email
     id
     fio
-    phoneNumber
+    phone_number
+    role
 
     constructor(model) {
         this.email = model.email
         this.id = model.id
         this.fio = model.fio
-        this.phoneNumber = model.phoneNumber
+        this.phone_number = model.phone_number
+        this.role = model.role
     }
 }

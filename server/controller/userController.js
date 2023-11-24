@@ -79,6 +79,66 @@ class UserController {
       next(e)
     }
   }
+
+  //MUNICIPAL
+
+  async regMunicipalServices(req, res, next) {
+    try {
+      const errors = validationResult(req)
+      if (!errors.isEmpty()) {
+        return next(ApiError.BadRequest("Ошибка при валидации", errors.array()))
+      }
+      const { cod, password, name, specification, work_area, email, reg_time } = req.body
+      const userData = await userService.regMunicipalServices(
+        cod, 
+        password, 
+        name, 
+        specification, 
+        work_area, 
+        email,
+        reg_time
+      )
+
+      res.cookie("refreshToken", userData.refreshToken, {
+        maxAge: 30 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+      })
+      return res.json(userData)
+    } catch (e) {
+      next(e)
+    }
+  }
+
+  async loginMunicipalServices(req, res, next) {
+    try {
+      const { cod, password } = req.body
+      const userData = await userService.loginMunicipalServices(cod, password)
+
+      res.cookie("refreshToken", userData.refreshToken, {
+        maxAge: 30 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+      })
+      return res.json(userData)
+    } catch (e) {
+      next(e)
+    }
+  }
+
+  async refreshMunicipal(req, res, next) {
+    try {
+      const { refreshToken } = req.cookies
+
+      const userData = await userService.refreshMunicipal(refreshToken)
+
+      res.cookie("refreshToken", userData.refreshToken, {
+        maxAge: 30 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+      })
+      return res.json(userData)
+    } catch (e) {
+      next(e)
+    }
+  }
 }
 
 module.exports = new UserController()

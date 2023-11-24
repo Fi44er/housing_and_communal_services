@@ -29,18 +29,30 @@ class TokenService {
         }
     }
 
-    async saveToken(userId, refreshToken) {
+    async saveToken(userId, refreshToken, municipalId) {
         const connect = await connection
 
-        // console.log(userId);
-        const [rows, fields] = await connect.execute('SELECT * FROM refresh WHERE user = ?', [userId]); // tokenData
-        if(rows[0]) {
-            rows[0].refreshToken = refreshToken
-            console.log(rows[0]);
-
-            return connect.execute(`UPDATE refresh SET refreshToken = ? WHERE user = ${userId}`, [rows[0].refreshToken])
+        if(userId != null) {
+            const [rows, fields] = await connect.execute('SELECT * FROM refresh WHERE user = ?', [userId]); // tokenData
+            if(rows[0]) {
+                rows[0].refreshToken = refreshToken
+                console.log(rows[0]);
+    
+                return connect.execute(`UPDATE refresh SET refreshToken = ? WHERE user = ${userId}`, [rows[0].refreshToken])
+            }
+            return connect.execute(`INSERT INTO refresh(user, refreshToken) VALUES (?,?)`, [userId, refreshToken])
         }
-        return connect.execute(`INSERT INTO refresh(user, refreshToken) VALUES (?,?)`, [userId, refreshToken])
+
+        if(municipalId != null) {
+            const [rows, fields] = await connect.execute('SELECT * FROM refresh WHERE municipal_id = ?', [municipalId]); // tokenData
+            if(rows[0]) {
+                rows[0].refreshToken = refreshToken
+                console.log(rows[0]);
+    
+                return connect.execute(`UPDATE refresh SET refreshToken = ? WHERE user = ${municipalId}`, [rows[0].refreshToken])
+            }
+            return connect.execute(`INSERT INTO refresh(municipal_id, refreshToken) VALUES (?,?)`, [municipalId, refreshToken])
+        }
     }
 
     async removeToken(refreshToken) {
