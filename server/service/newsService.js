@@ -11,4 +11,11 @@ class NewsService {
             throw ApiError.BadRequest(`Не все  поля заполнены`)
         }
     }
+
+    async getAllNews() {
+        const connect = await connection
+
+        const news = await connect.execute('SELECT * FROM `news`')
+        return news[0]
+    }
 }
