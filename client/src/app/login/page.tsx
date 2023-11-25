@@ -5,7 +5,7 @@ import "./login.css";
 import Image from "next/image";
 // import { useState } from "react";
 import { Context } from "../layout";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { observer } from "mobx-react-lite";
 
 export default function Login() {
@@ -13,6 +13,21 @@ export default function Login() {
   const [password, setPassword] = useState<string>("");
 
   const { store } = useContext(Context);
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      store.checkAuth()
+    }
+  }, [])
+  if (localStorage.getItem("token")) {
+      location.href = '/lk_user'
+      return (
+        <div className="w-full h-full flex justify-center items-center">
+            <h1 className="font-bold text-7xl">Загрузка...</h1>
+        </div>
+      )
+  }
+
   return (
     <main className="login">
       <div className="container">

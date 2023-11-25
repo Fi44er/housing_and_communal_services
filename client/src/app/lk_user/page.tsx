@@ -28,10 +28,6 @@ export default function LkUser() {
                 alt="user_Img"
               />
             </div>
-            {/* <label className="inputFile">
-              Выберете фото
-              <input type="file" name="file" />
-            </label> */}
           </div>
           <div className="userProfileInfo">
             <div className="userProfileInfoItems">
