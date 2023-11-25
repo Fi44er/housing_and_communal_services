@@ -52,13 +52,30 @@
   align-items: center;
   grid-gap: 0 1rem;
 }
-.headerButton button {
+.headerButton a {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #023affcc;
+  width: 21rem;
+  height: 5rem;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 1rem;
 }
 .headerButtonMobile {
   display: none;
+}
+.headerButtonMobile a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #023affcc;
+  width: 21rem;
+  height: 5rem;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 1rem;
 }
 .logo2 {
   display: none;
