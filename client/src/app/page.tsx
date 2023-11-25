@@ -1,9 +1,14 @@
+'use client'
+
 import Image from "next/image";
-import Header from "./components/header/Header";
 import styles from "./Home.module.css";
 
+<<<<<<< HEAD
 export default function Home() {
   
+=======
+const Home = () => {
+>>>>>>> 0d1d16f (add)
   return (
     
     <main className={styles.home}>
@@ -32,6 +37,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* <AuthModal isOpen={isAuthOpen} onRequestClose={closeAuth} />
+      <RegModal isOpen={isRegOpen} onRequestClose={closeReg} /> */}
       <div className={styles.conatiner}>
         <div className={styles.homeContentиBottom}>
           <div>
@@ -64,4 +71,6 @@ export default function Home() {
       </div>
     </main>
   );
-}
+};
+
+export default Home;

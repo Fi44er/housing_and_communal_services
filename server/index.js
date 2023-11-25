@@ -5,11 +5,13 @@ const cookieParser = require("cookie-parser")
 const router = require('./router/index')
 const connection = require('./database/db')
 const errorMiddlware = require('./middlewares/middlewaresError')
+const path = require('path')
 
 const PORT = process.env.PORT || 5000
 const app = express()
 
 app.use(express.json())
+app.use('/images', express.static(path.join(__dirname, 'images')))
 app.use(cookieParser())
 app.use(cors({
     credentials: true,
