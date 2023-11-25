@@ -2,13 +2,10 @@
 
 import Image from "next/image";
 import styles from "./Home.module.css";
-
-<<<<<<< HEAD
-export default function Home() {
   
-=======
+
 const Home = () => {
->>>>>>> 0d1d16f (add)
+
   return (
     
     <main className={styles.home}>

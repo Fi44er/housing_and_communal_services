@@ -10,6 +10,5 @@ class NewsService {
         }else {
             throw ApiError.BadRequest(`Не все  поля заполнены`)
         }
-
     }
 }
