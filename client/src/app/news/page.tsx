@@ -36,9 +36,14 @@ export default function News() {
                 реализации межрегиональных и региональных программ газификации
                 ЖКХ, промышленных и иных организаций.
               </p>
+              <div className={styles.contentButton}>
+                <div>
+                  <Link href="/login">Подробнее</Link>
+                </div>
+              </div>
             </div>
             <div className={styles.newsContentItemImg}>
-              <Image src="/Rectangle 111.svg" width={379} height={308} alt="" />
+              <Image src="/Rectangle 111.svg" width={479} height={400} alt="" />
             </div>
           </div>
         </div>
