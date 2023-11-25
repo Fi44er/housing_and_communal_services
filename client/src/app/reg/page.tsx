@@ -63,6 +63,15 @@ export default function Reg() {
                     // value={password}
                   />
                 </div>
+                <div className="input">
+                  <Image src="/fio.svg" width={29} height={29} alt="" />
+                  <input
+                    type="text"
+                    placeholder="Адресс"
+                    // onChange={(e) => setEmail(e.target.value)}
+                    // value={email}
+                  />
+                </div>
                 <button
                   className="formButton"
                   //   onClick={() => store.login(email, password)}
