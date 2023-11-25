@@ -68,29 +68,6 @@ export function Header() {
           <Image src="/Category.svg" width={40} height={40} alt="" />
         </button>
       </div>
-<<<<<<< HEAD
-      {/* <div className={`login ${isLogin ? "active" : ""}`}>
-        <a className="modalCloseBtn" onClick={() => setLogin(!isLogin)}>
-          <Image src="/close.svg" width={50} height={50} alt="close" />
-        </a>
-
-        <div className="menuForm">
-          <div className="menuFormInside">
-            <div className="menuFormInsideHeading">
-              <h2>Вход</h2>
-            </div>
-            <div className="menuFormInpust">
-              <input type="text" placeholder="Email" />
-              <input type="password" placeholder="password" />
-            </div>
-            <div className="menuFormButton">
-              <button>Войти</button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-=======
->>>>>>> b40a237356ac90b161b9fd464af361e59ebb6be2
     </header>
     </>
   );
