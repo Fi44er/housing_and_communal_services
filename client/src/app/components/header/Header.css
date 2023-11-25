@@ -63,6 +63,66 @@
 .logo2 {
   display: none;
 }
+.login {
+  margin-top: 90rem;
+  position: fixed;
+  top: -145rem;
+  left: 45rem;
+  display: flex;
+  width: 100rem;
+  height: 50rem;
+  background-color: #fff;
+  border: 0.2rem solid #023aff;
+  border-radius: 1.6rem;
+  transition: transform 0, 3s linear;
+}
+.login.active {
+  transform: translateY(145%);
+}
+.menuForm {
+  display: flex;
+  margin: 5rem auto;
+  padding-left: 5rem;
+}
+.menuFormInsideHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+.menuFormInside h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 4rem;
+  color: #023aff;
+  font-weight: 600;
+}
+.menuFormInpust {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 2.5rem;
+}
+.menuFormInpust input {
+  width: 40rem;
+  border-radius: 2rem;
+  border: 0.2rem solid #004e8f;
+  padding: 2rem;
+  font-size: 1.5rem;
+  outline: none;
+}
+.menuFormButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+.login a {
+  display: block;
+  float: right;
+}
+
 /* @media (min-width: 1400px) {
   .header {
     padding: 0 18rem;

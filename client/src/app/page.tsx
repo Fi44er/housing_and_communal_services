@@ -3,7 +3,9 @@ import Header from "./components/header/Header";
 import styles from "./Home.module.css";
 
 export default function Home() {
+  
   return (
+    
     <main className={styles.home}>
       <div className={styles.conatiner}>
         <div className={styles.homeContent}>
