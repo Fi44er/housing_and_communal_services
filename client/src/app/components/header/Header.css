@@ -63,7 +63,7 @@
 .logo2 {
   display: none;
 }
-.login {
+/* .login {
   margin-top: 90rem;
   position: fixed;
   top: -145rem;
@@ -118,10 +118,10 @@
   align-items: center;
   margin-top: 5rem;
 }
-.login a {
+.login a image {
   display: block;
   float: right;
-}
+} */
 
 /* @media (min-width: 1400px) {
   .header {

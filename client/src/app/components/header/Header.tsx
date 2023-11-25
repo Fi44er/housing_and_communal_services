@@ -67,7 +67,7 @@ export default function Header() {
           <Image src="/Category.svg" width={40} height={40} alt="" />
         </button>
       </div>
-      <div className={`login ${isLogin ? "active" : ""}`}>
+      {/* <div className={`login ${isLogin ? "active" : ""}`}>
         <a className="modalCloseBtn" onClick={() => setLogin(!isLogin)}>
           <Image src="/close.svg" width={50} height={50} alt="close" />
         </a>
@@ -86,7 +86,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </header>
   );
 }
