@@ -1,8 +1,26 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./news.module.css";
+import { useEffect, useState } from "react";
+import axios from 'axios'
+import { INews } from "@/models/INews";
 
 export default function News() {
+  const [news, setNews] = useState<INews[]>([])
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/news')
+    .then((response) => {
+      setNews(response.data)
+    })
+    .catch((e) => {
+      return e
+    })
+  }, [])
+
+  console.log(news[1]);
+  const array = ['fwrwwf', 'ewdewfwe']
   return (
     <main className={styles.news}>
       <div className={styles.container}>
@@ -27,14 +45,13 @@ export default function News() {
         <div className={styles.newsHading}>
           <h2>НОВОСТИ</h2>
         </div>
-        <div className={styles.newsContentBlock}>
+        {news.map(newsId => (
+          <div className={styles.newsContentBlock}>
           <div className={styles.newsContentItems}>
             <div className={styles.newsContentItemText}>
-              <h2>Уточнены правила реализации программ газификации ЖКХ</h2>
+              <h2>{newsId.heading}</h2>
               <p>
-                С 1 сентября 2024 года вносятся изменения в правила разработки и
-                реализации межрегиональных и региональных программ газификации
-                ЖКХ, промышленных и иных организаций.
+                {newsId.text}
               </p>
               <div className={styles.contentButton}>
                 <div>
@@ -43,10 +60,14 @@ export default function News() {
               </div>
             </div>
             <div className={styles.newsContentItemImg}>
-              <Image src="/Rectangle 111.svg" width={479} height={400} alt="" />
+
+              <Image src={newsId.img} width={379} height={308} alt="" />
             </div>
           </div>
         </div>
+        ))}
+        {/* Object.keys(person).forEach((propName) => console.log(person[propName])); */}
+        
       </div>
     </main>
   );

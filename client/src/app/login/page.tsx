@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import "./login.css";
 // import Link from "next/link";
@@ -9,9 +9,10 @@ import { useContext, useState } from "react";
 import { observer } from "mobx-react-lite";
 
 export default function Login() {
-  const [email, setEmail] = useState<string>("")
-  const [password, setPassword] = useState<string>("")
-  const { store } = useContext(Context)
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const { store } = useContext(Context);
   return (
     <main className="login">
       <div className="container">
@@ -33,7 +34,7 @@ export default function Login() {
             />
             <div className="modalForm">
               <h1>Вход</h1>
-              {/* <h1>{store.login}</h1> */}
+              <h1 className="text-red-600">{store.message}</h1>
               <div className="modalInput">
                 <div className="input">
                   <Image src="/email.svg" width={29} height={29} alt="" />
@@ -55,7 +56,7 @@ export default function Login() {
                 </div>
                 <button
                   className="formButton"
-                    onClick={() => store.login(email, password)}
+                  onClick={() => store.login(email, password)}
                 >
                   Войти
                 </button>

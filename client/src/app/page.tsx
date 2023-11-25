@@ -66,6 +66,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <img src="/static/image 15.png" alt="" />
     </main>
   );
 };

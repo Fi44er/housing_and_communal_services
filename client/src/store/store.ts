@@ -62,7 +62,8 @@ export default class Store {
       this.setAuth(true)
       this.setUser(response.data.user)
     } catch (e: any) {
-      console.log(e.response?.data?.message)
+      // console.log(e.response?.data?.message)
+      this.setMessage(e.response?.data?.message)
     }
   }
 
@@ -91,4 +92,5 @@ export default class Store {
       this.setAuth(false)
     }
   }
+
 }

@@ -1,21 +1,13 @@
 const connection = require('../database/db')
-const ApiError = require('../exceptions/apiError')
-
+// const UserDto = require('../dtos/userDto')
 
 class NewsService {
-    async addNews(img, heading, text) {
-        const connect = await connection
-        if(img.lenght != 0 && heading.lenght != 0 && text.lenght != 0) {
-            await connect.execute("INSERT INTO `news`(`img`, `heading`, `text`) VALUES(?,?,?)", [img, heading, text])
-        }else {
-            throw ApiError.BadRequest(`Не все  поля заполнены`)
-        }
-    }
-
     async getAllNews() {
         const connect = await connection
 
-        const news = await connect.execute('SELECT * FROM `news`')
-        return news[0]
+        const users = await connect.execute('SELECT * FROM `news`')
+        return users[0]
     }
 }
+
+module.exports = new NewsService()

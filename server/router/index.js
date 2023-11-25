@@ -3,7 +3,7 @@ const UserController = require('../controller/userController')
 const {body} = require('express-validator')
 const middlewaresAuth = require('../middlewares/middlewaresAuth')
 const NewsController = require('../controller/newsController')
-const middlewaresNews = require('../middlewares/middlewaresNews')
+
 
 const router = new Router()
 
@@ -22,7 +22,6 @@ router.post('/regMunicipalServices', UserController.regMunicipalServices)
 router.post('/loginMunicipalServices', UserController.loginMunicipalServices)
 
 // news
-router.post('/addNews',middlewaresNews.single('photo') , NewsController.addNews)
-
+router.get('/news', NewsController.getNews)
 
 module.exports = router
