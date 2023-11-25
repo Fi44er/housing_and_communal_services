@@ -4,14 +4,10 @@ import Image from "next/image";
 import "./Header.css";
 import { useState } from "react";
 
+
 export function Header() {
   const [isOpen, setOpen] = useState(false);
-<<<<<<< HEAD:client/src/app/components/header/Header.tsx
-  const [isLogin, setLogin] = useState(false);
-  const [isReg, setReg] = useState(false);
-=======
 
->>>>>>> 0d1d16f (add):client/src/components/header/Header.tsx
   return (
     <>
       <header className="header">
@@ -61,10 +57,10 @@ export function Header() {
       </nav>
       <div className="headerButton">
         <div>
-          <button onClick={() => setLogin(!isLogin)}>Войти</button>
+          <button>Войти</button>
         </div>
         <div>
-          <button onClick={() => setReg(!isReg)}>Регистрация</button>
+          <button>Регистрация</button>
         </div>
       </div>
       <div className="headerMenu">
@@ -72,6 +68,7 @@ export function Header() {
           <Image src="/Category.svg" width={40} height={40} alt="" />
         </button>
       </div>
+<<<<<<< HEAD
       {/* <div className={`login ${isLogin ? "active" : ""}`}>
         <a className="modalCloseBtn" onClick={() => setLogin(!isLogin)}>
           <Image src="/close.svg" width={50} height={50} alt="close" />
@@ -92,6 +89,8 @@ export function Header() {
           </div>
         </div>
       </div> */}
+=======
+>>>>>>> b40a237356ac90b161b9fd464af361e59ebb6be2
     </header>
     </>
   );
