@@ -16,6 +16,15 @@ class NewsController {
             next(e)
         }
     }
+
+    async getAllNews(req, res, next) {
+        try{
+            const news = await NewsService.getAllNews() 
+            return res.json(news)
+        }catch(e) {
+            next(e)
+        }
+    }
 }
 
 module.exports = new NewsController()
