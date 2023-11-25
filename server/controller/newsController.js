@@ -1,6 +1,5 @@
 const NewsService = require("../service/newsService")
 
-
 class NewsController {
     async addNews(req, res, next) {
         try{
@@ -18,6 +17,5 @@ class NewsController {
         }
     }
 }
-
 
 module.exports = new NewsController()
