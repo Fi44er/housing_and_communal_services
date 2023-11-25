@@ -4,12 +4,17 @@ import Image from "next/image";
 import "./Header.css";
 import { useState } from "react";
 
-export default function Header() {
+export function Header() {
   const [isOpen, setOpen] = useState(false);
+<<<<<<< HEAD:client/src/app/components/header/Header.tsx
   const [isLogin, setLogin] = useState(false);
   const [isReg, setReg] = useState(false);
+=======
+
+>>>>>>> 0d1d16f (add):client/src/components/header/Header.tsx
   return (
-    <header className="header">
+    <>
+      <header className="header">
       <div className="headerLogo">
         <Image
           className="logo1"
@@ -88,5 +93,6 @@ export default function Header() {
         </div>
       </div> */}
     </header>
+    </>
   );
 }

@@ -2,6 +2,8 @@ const Router = require('express').Router
 const UserController = require('../controller/userController')
 const {body} = require('express-validator')
 const middlewaresAuth = require('../middlewares/middlewaresAuth')
+const NewsController = require('../controller/newsController')
+const middlewaresNews = require('../middlewares/middlewaresNews')
 
 const router = new Router()
 
@@ -18,6 +20,9 @@ router.get('/users', middlewaresAuth, UserController.getUsers)
 // municipal
 router.post('/regMunicipalServices', UserController.regMunicipalServices)
 router.post('/loginMunicipalServices', UserController.loginMunicipalServices)
+
+// news
+router.post('/addNews',middlewaresNews.single('photo') , NewsController.addNews)
 
 
 module.exports = router
