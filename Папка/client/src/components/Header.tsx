@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import { useState } from "react";
 
-
 export function Header() {
   const [isOpen, setOpen] = useState(false);
 
@@ -38,10 +37,10 @@ export function Header() {
               <Link to="/about_us">Контакты</Link>
             </li>
             <li className="headerNavItem">
-              <Link to="#">О ЖКХ </Link>
+              <Link to="/jkh">О ЖКХ </Link>
             </li>
             <li className="headerNavItem">
-              <Link to="#">Раписание</Link>
+              <Link to="/schedule">Раписание</Link>
             </li>
             <li className="headerNavItem">
               <Link to="/news">Новости</Link>
