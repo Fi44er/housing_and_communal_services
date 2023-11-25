@@ -1,11 +1,11 @@
-import "./login.css";
+import "./reg.css";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Login() {
+export default function Reg() {
   return (
-    <main className="login">
+    <main className="reg">
       <div className="container">
         <div className="modal">
           <div className="modalInfo">
@@ -24,9 +24,27 @@ export default function Login() {
               alt="noteBook"
             />
             <div className="modalForm">
-              <h1>Вход</h1>
+              <h1>Регистрация</h1>
               {/* <h1>{store.login}</h1> */}
               <div className="modalInput">
+                <div className="input">
+                  <Image src="/fio.svg" width={29} height={29} alt="" />
+                  <input
+                    type="text"
+                    placeholder="ФИО"
+                    // onChange={(e) => setEmail(e.target.value)}
+                    // value={email}
+                  />
+                </div>
+                <div className="input">
+                  <Image src="/phone.svg" width={29} height={29} alt="" />
+                  <input
+                    type="text"
+                    placeholder="Телефон"
+                    // onChange={(e) => setEmail(e.target.value)}
+                    // value={email}
+                  />
+                </div>
                 <div className="input">
                   <Image src="/email.svg" width={29} height={29} alt="" />
                   <input
@@ -49,7 +67,7 @@ export default function Login() {
                   className="formButton"
                   //   onClick={() => store.login(email, password)}
                 >
-                  Войти
+                  Зарегистрироваться
                 </button>
               </div>
             </div>

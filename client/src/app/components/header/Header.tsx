@@ -4,12 +4,13 @@ import Image from "next/image";
 import "./Header.css";
 import { useState } from "react";
 
-export default function Header() {
+
+export function Header() {
   const [isOpen, setOpen] = useState(false);
-  const [isLogin, setLogin] = useState(false);
-  const [isReg, setReg] = useState(false);
+
   return (
-    <header className="header">
+    <>
+      <header className="header">
       <div className="headerLogo">
         <Image
           className="logo1"
@@ -56,10 +57,10 @@ export default function Header() {
       </nav>
       <div className="headerButton">
         <div>
-          <button onClick={() => setLogin(!isLogin)}>Войти</button>
+          <button>Войти</button>
         </div>
         <div>
-          <button onClick={() => setReg(!isReg)}>Регистрация</button>
+          <button>Регистрация</button>
         </div>
       </div>
       <div className="headerMenu">
@@ -67,7 +68,7 @@ export default function Header() {
           <Image src="/Category.svg" width={40} height={40} alt="" />
         </button>
       </div>
-    
     </header>
+    </>
   );
 }
