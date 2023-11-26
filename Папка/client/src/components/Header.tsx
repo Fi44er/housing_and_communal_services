@@ -34,7 +34,7 @@ export function Header() {
               <Link to="/">Главная </Link>
             </li>
             <li className="headerNavItem">
-              <Link to="/about_us">Контакты</Link>
+              <Link to="/contacts">Контакты</Link>
             </li>
             <li className="headerNavItem">
               <Link to="/jkh">О ЖКХ </Link>

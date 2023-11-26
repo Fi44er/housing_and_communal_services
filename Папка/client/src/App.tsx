@@ -10,6 +10,7 @@ import LkUser from "./pages/lk_user/page";
 import News from "./pages/news/page";
 import Jkx from "./pages/o_jkx/page";
 import Schedule from "./pages/schedule/Schedule";
+import Contacts from "./pages/contacts/contatcs";
 
 function App() {
   let authenticated;
@@ -35,6 +36,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/jkh" element={<Jkx />} />
           <Route path="/schedule" element={<Schedule />} />
+          <Route path="/contacts" element={<Contacts />} />
         </Routes>
       </BrowserRouter>
     </>
