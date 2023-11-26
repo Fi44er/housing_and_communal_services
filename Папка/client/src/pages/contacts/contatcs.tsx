@@ -54,7 +54,7 @@ const Contacts = () => {
         <div className="contactsButton">
           <Link
             className="w-full mt-44 h-16 bg-blue-800 p-10 text-white rounded-3xl"
-            to="http://127.0.0.1:5500/index.html"
+            to="http://127.0.0.1:5500/%D0%9F%D0%B0%D0%BF%D0%BA%D0%B0/Index.html"
           >
             Просмотреть иниерактивную карту
           </Link>
